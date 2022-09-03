@@ -52,14 +52,14 @@ This section should detail the cross validation strategy and justify your approa
 
 I test the 3 kind of training strategy and compare the result using the loss, DetectionBoxes precision, DetectionBoxes recall.
 
-```
+
 > **Legend of Tensorboard**
 - Default strategy: momentum optimizer, no data augumentation / learning rate decay
 
 - Optimizer strategy: adam optimizer, learning rate decay, no data augumentation
 
 - Final strategy: adam optimizer, learning rate decay, data augumentation
-```
+
 
 1. Loss
    
