@@ -52,14 +52,10 @@ This section should detail the cross validation strategy and justify your approa
 
 I test the 3 kind of training strategy and compare the result using the loss, DetectionBoxes precision, DetectionBoxes recall.
 
-
 > **Legend of Tensorboard**
 - Default strategy: momentum optimizer, no data augumentation / learning rate decay
-
 - Optimizer strategy: adam optimizer, learning rate decay, no data augumentation
-
 - Final strategy: adam optimizer, learning rate decay, data augumentation
-
 
 1. Loss
    
@@ -105,13 +101,11 @@ There are several option I can use to improve the performance of my model. First
    
    The next thing I consieder is generating more dataset by augumenting existence dataset. That can be implemented easily by adding the data_augmentation_options to config file of the object detection API of the Tensorflow.
    
-   ```
-      > **List of data augmentation method**
+   > **List of data augmentation method**
    RandomCropImage, NormalizeImage, RandomHorizontalFlip, 
    RandomRotation90, RandomBlackPatches, RandomAdjustBrightness, 
    RandomAdjustContrast, RandomAdjustHue, RandomAdjustSaturation, 
    RandomDistortColo
-   ```
    
    ![local image](aug_pic/aug_pic_1.png)
    
