@@ -1,20 +1,14 @@
 ### Project overview
 
-This section should contain a brief description of the project and what we are trying to achieve. Why is object detection such an important component of self driving car systems?
-
 The goal of this project is predicting the vehicle, pedestrian, cyclist, from recorded image of front camera of car. The object detection using  the optical camera is most prospective way to make the car drive itself because sensor price is cheap than [LiDAR](https://velodynelidar.com/what-is-lidar/) sensor.
 
 ### Set up
 
-This section should contain a brief description of the steps to follow to run the code for this repository.
-
-Specially, the Deep Learning technology is used for the object detection. To implement that method, I first build the the [Convolutional Neural Network](https://en.wikipedia.org/wiki/Convolutional_neural_network) model. Second, large collection dataset is needed to train and validate the built model. In this project, I use  the Perception dataset of [Waymo Open Dataset]([Open Dataset – Waymo](https://waymo.com/open/). The format of dataset is originally the *TFRecords* format which can used easily in the Deep Learning framework. The Tensorflow is selected for that. 
+Specially, the Deep Learning technology is used for the object detection. To implement that method, I first build the the [Convolutional Neural Network](https://en.wikipedia.org/wiki/Convolutional_neural_network) model. Second, large collection dataset is needed to train and validate the built model. In this project, I use  the Perception dataset of [Waymo Open Dataset](https://waymo.com/open/). The format of dataset is originally the *TFRecords* format which can used easily in the Deep Learning framework. The Tensorflow is selected for that. 
 
 ### Dataset
 
 #### Dataset analysis
-
-This section should contain a quantitative and qualitative description of the dataset. It should include images, charts and other visualizations.
 
 1. Display dataset
    
@@ -52,14 +46,10 @@ This section should detail the cross validation strategy and justify your approa
 
 I test the 3 kind of training strategy and compare the result using the loss, DetectionBoxes precision, DetectionBoxes recall.
 
-```
 > **Legend of Tensorboard**
 - Default strategy: momentum optimizer, no data augumentation / learning rate decay
-
 - Optimizer strategy: adam optimizer, learning rate decay, no data augumentation
-
 - Final strategy: adam optimizer, learning rate decay, data augumentation
-```
 
 1. Loss
    
@@ -81,7 +71,7 @@ I test the 3 kind of training strategy and compare the result using the loss, De
 
 4. Visualizing detection result 
    
-   The optimizer strategy works well for day time video. It does not make serious issue during driving.
+   The optimizer strategy works well for day time video. It might not make serious issue during driving.
    
    ![local image](optimizer_video/animation_1.gif)
    
@@ -93,8 +83,6 @@ I test the 3 kind of training strategy and compare the result using the loss, De
 
 #### Improve on the reference
 
-There are several option I can use to improve the performance of my model. First thing is changing the optimizer which is used to update the weight of Neural Network.
-
 1. **Optimizer setting**
    
    The default training strategy use the Momentum optimizer. From [post of online](https://medium.com/@ramrajchandradevan/the-evolution-of-gradient-descend-optimization-algorithm-4106a6702d39), I find the below animation which shows the speed of various optimizer finding the optimal point of loss function. I change the optimizer to Adam which use the positive side of the Momentum and Adagrad.
@@ -105,13 +93,11 @@ There are several option I can use to improve the performance of my model. First
    
    The next thing I consieder is generating more dataset by augumenting existence dataset. That can be implemented easily by adding the data_augmentation_options to config file of the object detection API of the Tensorflow.
    
-   ```
-      > **List of data augmentation method**
+   > **List of data augmentation method**
    RandomCropImage, NormalizeImage, RandomHorizontalFlip, 
    RandomRotation90, RandomBlackPatches, RandomAdjustBrightness, 
    RandomAdjustContrast, RandomAdjustHue, RandomAdjustSaturation, 
    RandomDistortColo
-   ```
    
    ![local image](aug_pic/aug_pic_1.png)
    
@@ -127,6 +113,6 @@ There are several option I can use to improve the performance of my model. First
 
 #### Improved result after applying training technique
 
-I test again new training strategy to night time video that failed before. Fortunately, it can detect the car of far location.
+I test again new training strategy to night time video that failed before. Fortunately, it can detect the car that is located far from it.
 
 ![local image](final_video/animation_3.gif)
