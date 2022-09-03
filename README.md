@@ -4,7 +4,7 @@ The goal of this project is predicting the vehicle, pedestrian, cyclist, from re
 
 ### Set up
 
-Specially, the Deep Learning technology is used for the object detection. To implement that method, I first build the the [Convolutional Neural Network](https://en.wikipedia.org/wiki/Convolutional_neural_network) model. Second, large collection dataset is needed to train and validate the built model. In this project, I use  the Perception dataset of [Waymo Open Dataset]([Open Dataset – Waymo](https://waymo.com/open/). The format of dataset is originally the *TFRecords* format which can used easily in the Deep Learning framework. The Tensorflow is selected for that. 
+Specially, the Deep Learning technology is used for the object detection. To implement that method, I first build the the [Convolutional Neural Network](https://en.wikipedia.org/wiki/Convolutional_neural_network) model. Second, large collection dataset is needed to train and validate the built model. In this project, I use  the Perception dataset of [Waymo Open Dataset](https://waymo.com/open/). The format of dataset is originally the *TFRecords* format which can used easily in the Deep Learning framework. The Tensorflow is selected for that. 
 
 ### Dataset
 
